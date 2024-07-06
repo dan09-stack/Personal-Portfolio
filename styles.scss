@@ -15,7 +15,7 @@
 
 body{
     background: linear-gradient(to right, #000000, #202224); // Linear gradient from black to dark gray
-    color: aliceblue;
+    color: var(--primary-color);
     .home{
         margin: auto;
         .logo-container{
