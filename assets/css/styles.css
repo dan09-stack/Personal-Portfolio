@@ -33,10 +33,6 @@ body .home #logo {
 body .home .nav-link:hover {
   color: var(--secondary-color);
 }
-body .home .active {
-  color: var(--primary-color);
-  font-weight: 800;
-}
 body .home .section1 {
   height: 75vh;
   color: var(--primary-color);
