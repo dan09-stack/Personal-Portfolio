@@ -51,6 +51,80 @@ body{
             }
         }
        }
+       .social{
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 25px 25px 0;
+            gap: 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+          /* for all social containers*/
+          .socialContainer {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: rgb(44, 44, 44);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition-duration: 0.3s;
+          }
+          /* instagram*/
+          .containerOne:hover {
+            background-color: var(--secondary-color);
+            transition-duration: 0.3s;
+          }
+          /* twitter*/
+          .containerTwo:hover {
+            background-color: var(--secondary-color);
+            transition-duration: 0.3s;
+          }
+          /* linkdin*/
+          .containerThree:hover {
+            background-color: var(--secondary-color);
+            transition-duration: 0.3s;
+          }
+          /* Whatsapp*/
+          .containerFour:hover {
+            background-color: var(--secondary-color);
+            transition-duration: 0.3s;
+          }
+          
+          .socialContainer:active {
+            transform: scale(0.9);
+            transition-duration: 0.3s;
+          }
+          
+          .socialSvg {
+            width: 17px;
+          }
+          
+          .socialSvg path {
+            fill: rgb(255, 255, 255);
+          }
+          
+          .socialContainer:hover .socialSvg {
+            animation: slide-in-top 0.3s both;
+          }
+          
+          @keyframes slide-in-top {
+            0% {
+              transform: translateY(-50px);
+              opacity: 0;
+            }
+          
+            100% {
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
+          
+       }
+      
+      
     }
     .about{
         font-weight: 500;
@@ -66,30 +140,217 @@ body{
         }
     }
     .services{
+        
         .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             width: 190px;
             height: 254px;
-            background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
-            border-radius: 20px;
-            transition: all .3s;
-           }
+            color: black;
+            background: var(--primary-color);
+            font-size: 20px;
+            font-weight:500;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.1s 0s linear;
+            position: relative;
+            overflow: hidden;
+          }
+          .card:active {
+            scale: 0.95;
+          }
+          .card::after {
+            content: "";
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            position: absolute;
+            right: 250px;
+            transition: right 0.4s 0s linear;
+            z-index: 2;
+          }
+          .card:hover::after {
+            right: -160px;
+          }
+          .card:hover {
+            color: #023047;
+          }
+          .img-container{
+            width: 80px;
+            height: 100px;
+            z-index: 10;
+            color: #fff !important;
+          }
+
+          .card p {
+            text-align: center;
+            z-index: 10;
+          }
+          .shadow__btn {
+            padding: 10px 20px;
+            border: none;
+            font-size: 10px;
+            color: #000000;
+            border-radius: 7px;
+            letter-spacing: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: 0.5s;
+            transition-property: box-shadow;
+          }
+          
+          .shadow__btn {
+            background: var(--primary-color);
+            box-shadow: 0 0 18px var(--primary-color);
+            z-index: 11;
+          }
+          
+          .shadow__btn:hover {
+            box-shadow: 0 0 5px var(--primary-color),
+                        0 0 25px var(--primary-color),
+                        0 0 50px var(--primary-color),
+                        0 0 100px var(--primary-color);
+          }
+          
+        
+    }
+    .projects{
+        .cards {
            
-           .card2 {
-            width: 190px;
-            height: 254px;
-            background-color: #1a1a1a;
-            border-radius:20px;
-            transition: all .2s;
-           }
-           
-           .card2:hover {
-            transform: scale(0.98);
-            border-radius: 20px;
-           }
-           
-           .card:hover {
-            box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
-           }
+            gap: 15px;
+          }
+          
+          
+          .cards .blue {
+            background-color: #3b82f6;
+          }
+          
+          .cards .card {
+            
+            text-align: center;
+            height: 100px;
+            width: 250px;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: 400ms;
+          }
+          
+          .cards .card p.tip {
+            font-size: 1em;
+            font-weight: 700;
+          }
+          
+          .cards .card p.second-text {
+            font-size: .7em;
+          }
+          
+          .cards .card:hover {
+            transform: scale(2, 2);
+          }
+          
+          .cards:hover > .card:not(:hover) {
+            filter: blur(10px);
+            transform: scale(0.9, 0.9);
+          }
+    }
+    .contact{
+        .login-container {
+            background-color: #2f2f2f;
+            border-radius: 8px;
+            box-shadow: rgb(31 31 31 / 17%) 0px -23px 25px 0px inset,
+              rgb(108 108 108 / 23%) 0px -36px 30px 0px inset,
+              rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+              rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+              rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+          }
+          
+          .login-form {
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .heading {
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 40px;
+            margin-bottom: 5px;
+          }
+          
+          .paragraph {
+            color: #ffffff;
+            font-weight: 400;
+            font-size: 15px;
+            margin-bottom: 15px;
+          }
+          
+          .input-group {
+            margin-bottom: 20px;
+          }
+          
+          .input-group input {
+            background: none;
+            border: 1px solid #353535;
+            padding: 15px 23px;
+            font-size: 16px;
+            border-radius: 8px;
+            color: #979797;
+            width: 100%;
+            box-shadow: rgb(136 136 136 / 17%) 0px -23px 25px 0px inset,
+              rgb(81 81 81 / 23%) 0px -36px 30px 0px inset,
+              rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+              rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+              rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+          }
+          
+          .input-group input:focus {
+            border-color: #0173ed;
+            outline: none;
+          }
+          
+          button {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #0173ed;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+          }
+          
+          button:hover {
+            background-color: #0173ed;
+          }
+          
+          .bottom-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 400;
+          }
+          
+          .bottom-text a {
+            color: #0173ed;
+            text-decoration: none;
+            transition: color 0.3s ease;
+          }
+          
+          .bottom-text a:hover {
+            color: #3f95f2;
+          }
           
     }
 }
@@ -97,19 +358,30 @@ canvas{
     position: absolute !important;
     translate: -25% 0%!important;
 }
-button{
-    
-    background: linear-gradient(90deg, #000851 0%,  #10718c 100%);
-    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .25), 0 3px 10px 7px rgba(0, 0, 0, 0.11) !important;
-}
-
-.btn:hover{
-    color:#000000;
+.shadow__btn {
+    padding: 10px 20px;
+    border: none;
+    font-size: 10px;
+    color: #000000;
+    border-radius: 7px;
+    letter-spacing: 4px;
     font-weight: 700;
-    box-shadow: #10718c;
-    background: var(--secondary-color) !important; 
-    
-}
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+  }
+  
+  .shadow__btn {
+    background: var(--secondary-color);
+    box-shadow: 0 0 18px var(--secondary-color);
+  }
+  
+  .shadow__btn:hover {
+    box-shadow: 0 0 5px var(--secondary-color),
+                0 0 25px var(--secondary-color),
+                0 0 50px var(--secondary-color),
+                0 0 100px var(--secondary-color);
+  }
 
 .shine {
     font-size: 2em;
@@ -134,7 +406,7 @@ button{
     background-clip: text;
     background-size: 50px;
     animation: zezzz;
-   animation-duration: 5s;
+   animation-duration: 3s;
     animation-iteration-count: infinite;
   }
 @keyframes zezzz {
@@ -150,3 +422,20 @@ button{
     }
   }
   
+  @keyframes bounce_613 {
+    40% {
+      transform: scale(1.4);
+    }
+  
+    60% {
+      transform: scale(0.8);
+    }
+  
+    80% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
